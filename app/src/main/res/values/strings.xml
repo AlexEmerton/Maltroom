@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WhiskyNotes0.4</string>
+    <string name="template_note">Example note</string>
+
+    <string name="button_update">Update</string>
+    <string name="button_delete">Delete</string>
+
+    <string name="hint_add">Add</string>
+    <string name="hint_spin_name">Select name</string>
+    <string name="hint_spin_nose">Select nose</string>
+    <string name="hint_spin_finish">Select finish</string>
+    <string name="hint_spin_palate">Select palate</string>
+    <string name="hint_extra">Extra notes&#8230;</string>
+    <string name="hint_ID">ID</string>
+    <string name="hint_selectedNose">"Spinner selected : "</string>
+
+
+</resources>

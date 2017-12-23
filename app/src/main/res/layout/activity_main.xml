@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.emertonalex.whiskynotes04.MainActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/editTextNoteId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:hint="@string/hint_ID"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinnerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:hintText="@string/hint_spin_name"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinnerNose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:hintText="@string/hint_spin_nose"
+                />
+
+            <TextView
+                android:id="@+id/selectedNose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#7fff91c2"
+                android:padding="10dp"
+                />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinnerPalate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:hintText="@string/hint_spin_palate"
+                />
+
+            <TextView
+                android:id="@+id/selectedPalate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#7fff91c2"
+                android:padding="10dp"
+                />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinnerFinish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:hintText="@string/hint_spin_finish"
+                />
+
+            <TextView
+                android:id="@+id/selectedFinish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#7fff91c2"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextExtra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="@string/hint_extra" />
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1" />
+
+            <Button
+                android:id="@+id/buttonAddUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_add" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--<ListView
+        android:id="@+id/listViewNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />-->
+
+
+</RelativeLayout>
