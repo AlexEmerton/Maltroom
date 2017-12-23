@@ -42,4 +42,4 @@ This app helps users store their whisky notes
 
 * SearchableSpinner <a href="https://android-arsenal.com/details/1/3272#">see here</a>
 * Volley <a href="https://github.com/google/volley">see here</a>
-* PlaceholderView < href="https://github.com/janishar/PlaceHolderView">see here</a>
+* PlaceholderView <a href="https://github.com/janishar/PlaceHolderView">see here</a>
