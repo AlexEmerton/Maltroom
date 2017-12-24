@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity{
     // TODO: 03-Oct-17 add navigation drawer
     // TODO: 03-Oct-17 add personalisation
     // TODO: 04-Oct-17 add validation for all fields
-    // TODO: 15-Oct-17 10 star ratings  bar or allow half measures
+    // TODO: 15-Oct-17 10 star ratings  bar or allow half measures (!)
     // TODO: 15-Oct-17 icons for buttons instead of spinners
     // TODO: 15-Oct-17 edit from a list
 
@@ -216,212 +216,220 @@ public class MainActivity extends AppCompatActivity{
 
     //*********************GET DATA FROM DB -> TAKE JSON OUT*************************
     private void getData(String option){
-        if (option.equals("getNose")) {
+        switch (option) {
+            case "getNose": {
 
-            StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_NOSE,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            JSONObject j = null;
-                            try {
-                                //Parsing the fetched Json String to JSON Object
-                                j = new JSONObject(response);
+                StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_NOSE,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                JSONArray j;
+                                try {
+                                    //Parsing the fetched Json String to JSON Object
+                                    j = new JSONArray(response);
 
-                                //Storing the Array of JSON String to our JSON Array
-                                result = j.getJSONArray(config.JSON_ARRAY);
+                                    //Storing the Array of JSON String to our JSON Array
+                                    result = j;
 
-                                //Calling method getNotes to get the notes from the JSON Array
-                                getNotes(result, "getNose");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                    //Calling method getNotes to get the notes from the JSON Array
+                                    getNotes(result, "getNose");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
 
-                        }
-                    });
-
-
-            //Creating a request queue
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-            //Adding request to the queue
-            requestQueue.add(stringRequest);
-        }
-        else if (option.equals("getName")){
-            StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_NAME,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            JSONObject j = null;
-                            try {
-                                //Parsing the fetched Json String to JSON Object
-                                j = new JSONObject(response);
-
-                                //Storing the Array of JSON String to our JSON Array
-                                result = j.getJSONArray(config.JSON_ARRAY);
-
-                                //Calling method getNotes to get the notes from the JSON Array
-                                getNotes(result, "getName");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-
-                        }
-                    });
+                        });
 
 
-            //Creating a request queue
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
+                //Creating a request queue
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            //Adding request to the queue
-            requestQueue.add(stringRequest);
+                //Adding request to the queue
+                requestQueue.add(stringRequest);
+                break;
+            }
+            case "getName": {
+                StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_NAME,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                JSONArray j;
+                                try {
+                                    //Parsing the fetched Json String to JSON Object
+                                    j = new JSONArray(response);
 
-        }
-        else if (option.equals("getPalate")){
-            StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_PALATE,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            JSONObject j = null;
-                            try {
-                                //Parsing the fetched Json String to JSON Object
-                                j = new JSONObject(response);
+                                    //Storing the Array of JSON String to our JSON Array
+                                    result = j;
 
-                                //Storing the Array of JSON String to our JSON Array
-                                result = j.getJSONArray(config.JSON_ARRAY);
-
-                                //Calling method getNotes to get the notes from the JSON Array
-                                getNotes(result, "getPalate");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                    //Calling method getNotes to get the notes from the JSON Array
+                                    getNotes(result, "getName");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
 
-                        }
-                    });
-
-
-            //Creating a request queue
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-            //Adding request to the queue
-            requestQueue.add(stringRequest);
-
-        }
-        else if (option.equals("getFinish")){
-            StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_FINISH,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            JSONObject j = null;
-                            try {
-                                //Parsing the fetched Json String to JSON Object
-                                j = new JSONObject(response);
-
-                                //Storing the Array of JSON String to our JSON Array
-                                result = j.getJSONArray(config.JSON_ARRAY);
-
-                                //Calling method getNotes to get the notes from the JSON Array
-                                getNotes(result, "getFinish");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-
-                        }
-                    });
+                        });
 
 
-            //Creating a request queue
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
+                //Creating a request queue
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            //Adding request to the queue
-            requestQueue.add(stringRequest);
+                //Adding request to the queue
+                requestQueue.add(stringRequest);
 
+                break;
+            }
+            case "getPalate": {
+                StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_PALATE,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                JSONArray j;
+                                try {
+                                    //Parsing the fetched Json String to JSON Object
+                                    j = new JSONArray(response);
+
+                                    //Storing the Array of JSON String to our JSON Array
+                                    result = j;
+
+                                    //Calling method getNotes to get the notes from the JSON Array
+                                    getNotes(result, "getPalate");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        });
+
+
+                //Creating a request queue
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+                //Adding request to the queue
+                requestQueue.add(stringRequest);
+
+                break;
+            }
+            case "getFinish": {
+                StringRequest stringRequest = new StringRequest(api.URL_CATEGORIES_FINISH,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                JSONArray j;
+                                try {
+                                    //Parsing the fetched Json String to JSON Array
+                                    j = new JSONArray(response);
+
+                                    //Storing the Array of JSON String to our JSON Array
+                                    result = j;
+
+                                    //Calling method getNotes to get the notes from the JSON Array
+                                    getNotes(result, "getFinish");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        });
+
+
+                //Creating a request queue
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+                //Adding request to the queue
+                requestQueue.add(stringRequest);
+
+                break;
+            }
         }
     }
 
     //*********************PROCESS DATA FROM JSON*************************
     private void getNotes(JSONArray j, String option){
-        if (option.equals("getNose")) {
-            for(int i=0;i<j.length();i++){
-                try {
-                    //Getting json object
-                    JSONObject json = j.getJSONObject(i);
-                    //Adding the name of the student to array list
-                    spin_notes_nose.add(json.getString(config.TAG_NOSE));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+        switch (option) {
+            case "getNose":
+                for (int i = 0; i < j.length(); i++) {
+                    try {
+                        //Getting json object
+                        JSONObject json = j.getJSONObject(i);
+                        //Adding the name of the student to array list
+                        spin_notes_nose.add(json.getString(config.TAG_NOSE));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-            //Setting adapter to show the items in the spinner
-            spinnerNose.setAdapter(new ArrayAdapter<String>(MainActivity.this,
-                    android.R.layout.simple_spinner_dropdown_item, spin_notes_nose));
-        }
-        else if (option.equals("getName")){
-            for(int i=0;i<j.length();i++){
-                try {
-                    //Getting json object
-                    JSONObject json = j.getJSONObject(i);
+                //Setting adapter to show the items in the spinner
+                spinnerNose.setAdapter(new ArrayAdapter<>(MainActivity.this,
+                        android.R.layout.simple_spinner_dropdown_item, spin_notes_nose));
+                break;
+            case "getName":
+                for (int i = 0; i < j.length(); i++) {
+                    try {
+                        //Getting json object
+                        JSONObject json = j.getJSONObject(i);
 
-                    //Adding the name of the student to array list
-                    spin_notes_name.add(json.getString(config.TAG_NAME));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        //Adding the name of the student to array list
+                        spin_notes_name.add(json.getString(config.TAG_NAME));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-            //Setting adapter to show the items in the spinner
-            spinnerName.setAdapter(new ArrayAdapter<String>(MainActivity.this,
-                    android.R.layout.simple_spinner_dropdown_item, spin_notes_name));
-        }
-        else if (option.equals("getPalate")){
-            for(int i=0;i<j.length();i++){
-                try {
-                    //Getting json object
-                    JSONObject json = j.getJSONObject(i);
+                //Setting adapter to show the items in the spinner
+                spinnerName.setAdapter(new ArrayAdapter<>(MainActivity.this,
+                        android.R.layout.simple_spinner_dropdown_item, spin_notes_name));
+                break;
+            case "getPalate":
+                for (int i = 0; i < j.length(); i++) {
+                    try {
+                        //Getting json object
+                        JSONObject json = j.getJSONObject(i);
 
-                    //Adding the name of the student to array list
-                    spin_notes_palate.add(json.getString(config.TAG_PALATE));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        //Adding the name of the student to array list
+                        spin_notes_palate.add(json.getString(config.TAG_PALATE));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            } 
-            //Setting adapter to show the items in the spinner
-            spinnerPalate.setAdapter(new ArrayAdapter<String>(MainActivity.this,
-                    android.R.layout.simple_spinner_dropdown_item, spin_notes_palate));
-        }
-        else if (option.equals("getFinish")){
-            for(int i=0;i<j.length();i++){
-                try {
-                    //Getting json object
-                    JSONObject json = j.getJSONObject(i);
+                //Setting adapter to show the items in the spinner
+                spinnerPalate.setAdapter(new ArrayAdapter<>(MainActivity.this,
+                        android.R.layout.simple_spinner_dropdown_item, spin_notes_palate));
+                break;
+            case "getFinish":
+                for (int i = 0; i < j.length(); i++) {
+                    try {
+                        //Getting json object
+                        JSONObject json = j.getJSONObject(i);
 
-                    //Adding the name of the student to array list
-                    spin_notes_finish.add(json.getString(config.TAG_FINISH));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        //Adding the name of the student to array list
+                        spin_notes_finish.add(json.getString(config.TAG_FINISH));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-            //Setting adapter to show the items in the spinner
-            spinnerFinish.setAdapter(new ArrayAdapter<String>(MainActivity.this,
-                    android.R.layout.simple_spinner_dropdown_item, spin_notes_finish));
+                //Setting adapter to show the items in the spinner
+                spinnerFinish.setAdapter(new ArrayAdapter<>(MainActivity.this,
+                        android.R.layout.simple_spinner_dropdown_item, spin_notes_finish));
+                break;
         }
     }
 
@@ -485,12 +493,12 @@ public class MainActivity extends AppCompatActivity{
             //progressBar.setVisibility(GONE);
             try {
                 JSONObject object = new JSONObject(s);
-                if (!object.getBoolean("error")) {
-                    Toast.makeText(getApplicationContext(), object.getString("message"),
-                            Toast.LENGTH_SHORT).show();
-
-                    //refreshNoteList(object.getJSONArray("notes"));
-                }
+//                if (!object.getBoolean("error")) {
+//                    Toast.makeText(getApplicationContext(), object.getString("message"),
+//                            Toast.LENGTH_SHORT).show();
+//
+//                    //refreshNoteList(object.getJSONArray("notes"));
+//                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -525,7 +533,8 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = getLayoutInflater();
-            View listViewItem = inflater.inflate(R.layout.layount_note_list, null, true);
+            View listViewItem =
+                    inflater.inflate(R.layout.layount_note_list, null, true);
 
             //getting the textview for displaying name
             TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
