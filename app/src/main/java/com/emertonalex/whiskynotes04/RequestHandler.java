@@ -1,8 +1,5 @@
 package com.emertonalex.whiskynotes04;
 
-/**
- * Created by Alex on 20-Sep-17.
- */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -16,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
-public class RequestHandler {
-    public String sendPostRequest(String requestURL,
+class RequestHandler {
+    String sendPostRequest(String requestURL,
                                   HashMap<String, String> postDataParams) {
         //Creating a URL
         URL url;
@@ -69,7 +66,7 @@ public class RequestHandler {
         return sb.toString();
     }
 
-    public String sendGetRequest(String requestURL) {
+    String sendGetRequest(String requestURL) {
         StringBuilder sb = new StringBuilder();
         try {
             URL url = new URL(requestURL);
@@ -78,9 +75,9 @@ public class RequestHandler {
 
             String s;
             while ((s = bufferedReader.readLine()) != null) {
-                sb.append(s + "\n");
+                sb.append(s).append("\n");
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return sb.toString();
     }

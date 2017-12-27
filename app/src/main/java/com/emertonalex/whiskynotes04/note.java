@@ -1,11 +1,5 @@
 package com.emertonalex.whiskynotes04;
 
-/**
- * Created by Alex on 20-Sep-17.
- */
-
-import java.io.Serializable;
-
 public class note {
     private int id;
     private String name, nose, palate, finish, extra;
@@ -22,11 +16,11 @@ public class note {
         this.extra = extra;
     }
 
-    public int getID(){
+    int getID(){
         return id;
     }
 
-    public int getRating(){
+    int getRating(){
         return rating;
     }
 
@@ -34,19 +28,19 @@ public class note {
         return name;
     }
 
-    public String getNose(){
+    String getNose(){
         return nose;
     }
 
-    public String getPalate(){
+    String getPalate(){
         return palate;
     }
 
-    public String getFinish(){
+    String getFinish(){
         return finish;
     }
 
-    public String getExtra(){
+    String getExtra(){
         return extra;
     }
 }
