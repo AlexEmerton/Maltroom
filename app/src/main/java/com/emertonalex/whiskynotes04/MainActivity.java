@@ -491,18 +491,19 @@ public class MainActivity extends AppCompatActivity{
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             //progressBar.setVisibility(GONE);
-            try {
-                JSONObject object = new JSONObject(s);
-//                if (!object.getBoolean("error")) {
-//                    Toast.makeText(getApplicationContext(), object.getString("message"),
-//                            Toast.LENGTH_SHORT).show();
-//
-//                    //refreshNoteList(object.getJSONArray("notes"));
-//                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                JSONObject object = new JSONObject(s);
+////                if (!object.getBoolean("error")) {
+////                    Toast.makeText(getApplicationContext(), object.getString("message"),
+////                            Toast.LENGTH_SHORT).show();
+////
+////                    //refreshNoteList(object.getJSONArray("notes"));
+////                }
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
         }
+
         @Override
         protected String doInBackground(Void... voids) {
             RequestHandler requestHandler = new RequestHandler();
