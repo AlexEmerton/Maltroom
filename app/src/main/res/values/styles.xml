@@ -17,7 +17,11 @@
         <item name="color">@android:color/white</item>
     </style>
 
-   <!-- <style name="WhisNotes" parent="Theme.AppCompat.Light.NoActionBar" >
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- <style name="WhisNotes" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="colorAccent">@android:color/holo_orange_dark</item>
         <item name="android:colorBackground">@android:color/background_light</item>
         <item name="colorPrimaryDark">@android:color/background_light</item>

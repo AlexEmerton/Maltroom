@@ -76,19 +76,19 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editTextNoteId = (EditText) findViewById(R.id.editTextNoteId);
-        editTextExtra = (EditText) findViewById(R.id.editTextExtra);
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-        spinnerName = (Spinner) findViewById(R.id.spinnerName);
-        spinnerNose = (Spinner) findViewById(R.id.spinnerNose);
-        spinnerPalate = (Spinner) findViewById(R.id.spinnerPalate);
-        spinnerFinish = (Spinner) findViewById(R.id.spinnerFinish);
+        editTextNoteId =  findViewById(R.id.editTextNoteId);
+        editTextExtra = findViewById(R.id.editTextExtra);
+        ratingBar = findViewById(R.id.ratingBar);
+        spinnerName = findViewById(R.id.spinnerName);
+        spinnerNose = findViewById(R.id.spinnerNose);
+        spinnerPalate = findViewById(R.id.spinnerPalate);
+        spinnerFinish = findViewById(R.id.spinnerFinish);
 
-        final TextView selectedNose = (TextView) findViewById(R.id.selectedNose);
-        final TextView selectedPalate = (TextView) findViewById(R.id.selectedPalate);
-        final TextView selectedFinish = (TextView) findViewById(R.id.selectedFinish);
+        final TextView selectedNose = findViewById(R.id.selectedNose);
+        final TextView selectedPalate = findViewById(R.id.selectedPalate);
+        final TextView selectedFinish = findViewById(R.id.selectedFinish);
 
-        buttonAddUpdate = (Button) findViewById(R.id.buttonAddUpdate);
+        buttonAddUpdate = findViewById(R.id.buttonAddUpdate);
 
         /*progressBar = (ProgressBar) findViewById(R.id.progressBar);
         listView = (ListView) findViewById(R.id.listViewNotes);*/
@@ -538,11 +538,11 @@ public class MainActivity extends AppCompatActivity{
                     inflater.inflate(R.layout.layount_note_list, null, true);
 
             //getting the textview for displaying name
-            TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
+            TextView textViewName = listViewItem.findViewById(R.id.textViewName);
 
             //the update and delete textview
-            TextView textViewUpdate = (TextView) listViewItem.findViewById(R.id.textViewUpdate);
-            TextView textViewDelete = (TextView) listViewItem.findViewById(R.id.textViewDelete);
+            TextView textViewUpdate = listViewItem.findViewById(R.id.textViewUpdate);
+            TextView textViewDelete = listViewItem.findViewById(R.id.textViewDelete);
 
             final note note = noteList.get(position);
 
@@ -574,7 +574,7 @@ public class MainActivity extends AppCompatActivity{
                             spinnerFinish.getAdapter()).getPosition(note.getFinish()));
 
                     //we will also make the button text to Update
-                    buttonAddUpdate.setText("Update");
+                    buttonAddUpdate.setText(R.string.button_update);
                 }
             });
 
@@ -664,7 +664,7 @@ public class MainActivity extends AppCompatActivity{
         request.execute();
 
         editTextExtra.setText("");
-        buttonAddUpdate.setText("Add");
+        buttonAddUpdate.setText(R.string.hint_add);
 
         ratingBar.setRating(0);
         spinnerName.setSelection(0);
